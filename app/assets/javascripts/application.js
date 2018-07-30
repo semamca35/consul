@@ -82,6 +82,7 @@
 //= require send_newsletter_alert
 //= require managers
 //= require globalize
+//= require tenants
 //= require send_admin_notification_alert
 //= require settings
 
@@ -131,6 +132,7 @@ var initialize_modules = function() {
   App.SendNewsletterAlert.initialize();
   App.Managers.initialize();
   App.Globalize.initialize();
+  App.Tenants.initialize();
   App.SendAdminNotificationAlert.initialize();
   App.Settings.initialize();
 };

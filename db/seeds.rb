@@ -7,6 +7,8 @@ if Administrator.count == 0 && !Rails.env.test?
   admin.create_administrator
 end
 
+Tenant.create(name: "CONSUL", title: "CONSUL",  subdomain: "public", postal_code: "280")
+
 # Names for the moderation console, as a hint for moderators
 # to know better how to assign users with official positions
 Setting["official_level_1_name"] = "Cargo oficial 1"
