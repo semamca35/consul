@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   before_action :track_email_campaign
   before_action :set_return_url
   before_action :set_fallbacks_to_all_available_locales
+  before_action :set_mailer_host
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -126,5 +127,9 @@ class ApplicationController < ActionController::Base
 
     def set_fallbacks_to_all_available_locales
       Globalize.set_fallbacks_to_all_available_locales
+    end
+
+    def set_mailer_host
+      ActionMailer::Base.default_url_options[:host] = request.host_with_port
     end
 end
