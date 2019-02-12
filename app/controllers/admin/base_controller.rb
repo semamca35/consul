@@ -14,7 +14,7 @@ class Admin::BaseController < ApplicationController
     end
 
     def set_current_tenant
-      session[:current_tenant] ||= Tenant.find_by(subdomain: Apartment::Tenant.current)
+      session[:current_tenant] ||= Tenant.current
     end
 
     def get_tenants
