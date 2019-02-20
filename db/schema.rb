@@ -482,6 +482,7 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.string   "queue"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tenant"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
   end
 
@@ -1394,6 +1395,11 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.string   "institution_code_census"
     t.string   "portal_name_census"
     t.string   "user_code_census"
+    t.string   "server_name"
+    t.string   "twitter_key"
+    t.string   "twitter_secret"
+    t.string   "facebook_key"
+    t.string   "facebook_secret"
   end
 
   create_table "topics", force: :cascade do |t|
