@@ -7,6 +7,10 @@ class Verification::Residence
   validate :residence_tenant
   attr_writer :tenant
 
+  def tenant
+    @tenant ||= Tenant.current
+  end
+
   def postal_code_tenant
     errors.add(:postal_code, I18n.t("verification.residence.new.error_not_allowed_postal_code")) unless valid_postal_code?
   end
@@ -24,7 +28,7 @@ class Verification::Residence
   private
 
     def valid_postal_code?
-      postal_code =~ /^#{@tenant.postal_code}/
+      postal_code =~ /^#{tenant.postal_code}/
     end
 
 end
