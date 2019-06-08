@@ -21,6 +21,7 @@ module Consul
     config.i18n.default_locale = :en
     available_locales = [
       "ar",
+      "tr-TR",
       "bs",
       "cs",
       "da",
