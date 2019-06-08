@@ -6,6 +6,7 @@ files:
     update_option: update_without_changes
     languages_mapping:
       locale:
+        tr: tr-TR
         ar: ar
         ast: ast
         ca: ca
